@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery011_this.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          document.write(this + "," + $(this) + "<br/>");
+          //[object HTMLButtonElement],[object Object]
+          //document.write(this)
+          //this는 'button을 javascript형태로 가져옴' = [object HTMLButtonElement]
+          document.write(this.parentNode.nodeName + "<br/>");
+          //BODY
+          document.write($(this).parent()[0].nodeName + "<br/>");
+          //BODY
+          //jquery자원(.parent()[0])을 사용하여 부모요소를 가져와 js로변경
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn">commit</button>
+  </body>
+</html>

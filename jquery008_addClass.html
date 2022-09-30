@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery008_addClass.html</title>
+    <style>
+      .wrap {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("button:nth-of-type(1)").click(function () {
+          $("div").addClass("wrap"); // = jquery 실행문
+          //   document.querySelector("div").classList.add("wrap"); // = javascript 실행문
+        });
+
+        $("button:nth-of-type(2)").click(() => {
+          // 2번째 button 요소를 클릭하면
+          $("div").removeClass("wrap"); // wrap을 제거하여라
+          //   document.querySelector("div").classList.remove("wrap"); // -= javascript 실행문
+        });
+
+        $("button:nth-of-type(3)").click(() => {
+          $("div").toggleClass("wrap"); // 버튼 하나로 두가지 기능을 실행 on,off
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>commit</button>
+    <button>reset</button>
+    <button>toggle</button>
+    <div>&nbsp;</div>
+  </body>
+</html>

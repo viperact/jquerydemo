@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery007_text.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // value => val()
+        // innerText => text()
+        // innerHTML => html()
+
+        let dnode1 = $("div").text();
+        console.log(`donde1: ${dnode1}`);
+        // donde1: javascript
+
+        let dnode2 = $("div").html();
+        console.log(`donde2: ${dnode2}`);
+        // donde2: <span>javascript</span>
+
+        let dnode3 = $("input").val();
+        console.log(`donde3: ${dnode3}`);
+        //donde3: jquery
+      });
+    </script>
+  </head>
+  <body>
+    <button>click</button>
+    <div><span>javascript</span></div>
+    <input type="text" value="jquery" />
+  </body>
+</html>

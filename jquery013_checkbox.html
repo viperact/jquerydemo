@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery013_checkbox.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      //   console.log(this); //script에서의 this는 window
+      $(document).ready(function () {
+        // console.log(this); //jquery에서의 this는 document
+        $("#check_all").click(function () {
+          //   console.log(element);
+          $(".chk").prop("checked", $(this).prop("checked"));
+        });
+
+        //전체 선택
+        // 위와 아래 실행문이 같음
+
+        // $("#check_all").click(() => {
+        //   $(".chk").prop("checked", $("#check_all").prop("checked"));
+        // });
+
+        $("button").click(() => {
+          // $(".chk").each((index, element) => {
+          //   //불러온 index, elemet는 javascript값
+          //   // document.write(element);
+          //   if ($(element).prop("checked"))
+          //     $(element).parent().parent().remove();
+          //   //jquery값으로 변환 $(element).prop()
+          //   //$(element).parent()
+          // });
+
+          //   $(".chk:checked").parent().parent().remove();
+          //   // 체크되있는것들의 부모의 부모 항목을 삭제하라
+
+          $(".chk:checked").parents("tr").remove();
+          //현재 선택된 것의 부모요소중 tr부분을 삭제하라
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>삭제</button>
+    <div class="wrap">
+      <table>
+        <tr>
+          <th>
+            <input type="checkbox" class="check_all" id="check_all" />
+            <label for="check_all">전체선택</label>
+          </th>
+          <th>제목</th>
+          <th>작성자</th>
+        </tr>
+
+        <tr>
+          <td><input type="checkbox" class="chk" /></td>
+          <td>title1</td>
+          <td>writer1</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="chk" /></td>
+          <td>title2</td>
+          <td>writer2</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="chk" /></td>
+          <td>title3</td>
+          <td>writer3</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="chk" /></td>
+          <td>title4</td>
+          <td>writer4</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="chk" /></td>
+          <td>title5</td>
+          <td>writer5</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
